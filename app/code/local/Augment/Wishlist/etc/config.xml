@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Augment_Wishlist>
+            <version>0.0.1</version>
+        </Augment_Wishlist>
+    </modules>
+    <global>
+        <!--<helpers>
+            <wishlist>
+                <class>Augment_Wishlist_Helper</class>
+            </wishlist>
+        </helpers>-->
+    </global>
+     <frontend>
+        <routers>
+            <wishlist>
+                <args>
+                    <modules>
+                        <augment_wishlist before="Mage_Wishlist">Augment_Wishlist</augment_wishlist>
+                    </modules>
+                </args>
+            </wishlist>
+        </routers>
+    </frontend>
+    
+    <default>
+		<wishlist>
+			<configuration>
+				<keep_item>1</keep_item>
+			</configuration>
+		</wishlist>
+	</default>
+	
+     <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <augment_wishlist translate="title" module="wishlist">
+                                        <title>Wishlist Section</title>
+                                    </augment_wishlist>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
